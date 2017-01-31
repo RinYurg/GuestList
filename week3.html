@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Week 3 - Guest List App</title>
+	<title>Guest List</title>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <body>
 
-		<h1>Sign Your Name</h1>
+ <div id="input">
+
+	<center><div id="title">Guest List</div></center>
+
+	<div id="enter"><center><input type="text" id="inputText" name="Sumbit your tasks here!" placeholder="Sign Your Name Here"></center>
+	</div>
+
+	</div> 
 
 
-<h2> hi </h2>
+	<center>
+	<div class="listItems" id="item1"></div>
+	<div class="listItems" id="item2"></div>
+	<div class="listItems" id="item3"></div>
+	<div class="listItems" id="item4"></div>
+	<div class="listItems" id="item5"></div>
+	<div class="listItems" id="item6"></div>
+	<div class="listItems" id="item7"></div>
+	<div class="listItems" id="item8"></div>
+	<div class="listItems" id="item9"></div>
+	<div class="listItems" id="item10"></div>
+	</center>
 
 
 
+	<script type="text/javascript">
+	
+	var input = document.getElementById("enter");
+	var item1 = document.getElementById("item1");  
+	var item2 = document.getElementById("item2");
+	var item3 = document.getElementById("item3");
+	var item4 = document.getElementById("item4");
+	var item5 = document.getElementById("item5");
+	var item6 = document.getElementById("item6");  
+	var item7 = document.getElementById("item7");
+	var item8 = document.getElementById("item8");
+	var item9 = document.getElementById("item9");
+	var item10 = document.getElementById("item10");
 
+	</script>
 
+	<script type="text/javascript">
+		var currentItem = $('.listItems').first();
+		
+			$('#inputText').on('keypress', function (e) {
+	         	if(e.which === 13){  	
+		         	var inputVal = $('#inputText').val();
+			        $(currentItem).html(inputVal);
+			        $('#inputText').val('');
+			        currentItem = currentItem.next(); 
+	        	 }
+	   		});
+	</script>
 
-
-</body>
-</html>
+	</body>
+	</html>
